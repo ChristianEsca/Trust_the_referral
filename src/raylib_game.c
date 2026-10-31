@@ -437,7 +437,7 @@ void drawChip(int x, int y, int w, int h, const char *code, int on) { // iginugu
 void drawTopBar(void) {                                           // iginuguhit ang taas na bar (trust, patient no., lookups, streak)
     char buf[96];                                                 // pansamantalang lagayan ng text
     DrawRectangle(0, 0, SCREEN_W, 96, COL_PANEL);                 // background ng top bar
-    DrawText("REFERRAL DESK", 20, 10, 20, COL_MUTED);             // title sa kaliwa taas
+    DrawText("TRUST THE REFERRAL", 20, 10, 20, COL_MUTED);             // title sa kaliwa taas
     snprintf(buf, sizeof buf, "TRUST  %d / 100   (goal: %d)", shownTrust, TARGET_TRUST); // gawin ang trust text
     DrawText(buf, 20, 36, 20, COL_TEXT);                          // iguhit ang trust text
     drawTrustBar(20, 64, 620, 22, shownTrust);                    // iguhit ang trust bar
@@ -584,7 +584,7 @@ void drawNoticeScreen(void) {                                    // iginuguhit a
 
 void drawTitleScreen(void) {                                     // iginuguhit ang title/intro screen
     char buf[200];                                               // lagayan ng goal text
-    drawCentered("REFERRAL DESK", SCREEN_W / 2, 70, 60, COL_TEXT); // malaking title
+    drawCentered("TRUST THE REFERRAL", SCREEN_W / 2, 70, 60, COL_TEXT); // malaking title
     drawCentered("The Trust Game", SCREEN_W / 2, 140, 30, COL_AMBER); // subtitle
 
     int y = drawWrapped("You work the referral desk at a community health office. Send each " // intro text, part 1...
@@ -701,7 +701,7 @@ int main(void) {                                                 // dito nagsisi
     srand((unsigned)time(NULL));                                 // seed ng randomizer gamit ang oras, kaya iba-iba bawat laro
     loadHospitals();                                             // i-load ang listahan ng mga hospital
 
-    InitWindow(SCREEN_W, SCREEN_H, "Referral Desk: The Trust Game"); // gumawa ng window at lagyan ng title
+    InitWindow(SCREEN_W, SCREEN_H, "Trust the Referral"); // gumawa ng window at lagyan ng title
     SetTargetFPS(60);                                            // target na 60 frames per second
 
     while (!WindowShouldClose() && !quitGame) {                  // main loop: tuloy hanggang isara ang window o pindutin ang Quit
